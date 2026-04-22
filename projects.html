@@ -17,9 +17,11 @@
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 40px;
             background: #0f172a;
             color: #e5e7eb;
+            position: relative;
         }
 
         .logo {
@@ -51,6 +53,20 @@
             border-bottom: 2px solid #2563eb;
         }
 
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
+        }
+
         /* CONTAINER */
         .container {
             max-width: 1000px;
@@ -60,7 +76,6 @@
 
         h1 {
             font-size: 36px;
-            margin-bottom: 10px;
         }
 
         .subtitle {
@@ -109,102 +124,134 @@
             font-size: 15px;
         }
 
+        /* ✅ MOBILE */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">MyPortfolio</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <h1 class="logo">MyPortfolio</h1>
 
-    <!-- Content -->
-    <div class="container">
-        <h1>Projects</h1>
-        <p class="subtitle">
-            A selection of projects that showcase my development skills and learning journey.
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Projects</h1>
+    <p class="subtitle">
+        A selection of projects that showcase my development skills and learning journey.
+    </p>
+
+    <!-- Project 1 -->
+    <div class="project-card">
+        <div class="project-title">Personal Portfolio Website</div>
+
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+
+        <div class="section-title">Overview</div>
+        <p>
+            I developed a personal portfolio website to present my skills and projects in a structured and professional way.
         </p>
 
-        <!-- Project 1 -->
-        <div class="project-card">
-            <div class="project-title">Personal Portfolio Website</div>
+        <div class="section-title">My Approach</div>
+        <p>
+            Planned layout, built reusable components, and ensured responsiveness across devices.
+        </p>
 
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-
-            <div class="section-title">Overview</div>
-            <p>
-                I developed a personal portfolio website to present my skills, projects, and
-                background in a structured and professional way. The goal was to create a clean,
-                responsive, and user-friendly interface.
-            </p>
-
-            <div class="section-title">My Approach</div>
-            <p>
-                I started by planning the layout and identifying key sections such as Home,
-                About, Skills, and Projects. I focused on maintaining consistency across pages
-                by designing a reusable navigation bar and a minimal UI.
-            </p>
-
-            <p>
-                During development, I ensured responsive design using flexible layouts and
-                tested the website across different screen sizes. I also refined the color
-                scheme to maintain a professional appearance.
-            </p>
-
-            <div class="section-title">Key Learning</div>
-            <p>
-                This project helped me improve my front-end development skills, UI design
-                thinking, and the importance of clean and maintainable code structure.
-            </p>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-            <div class="project-title">Music Web Application</div>
-
-            <span class="tag">Python</span>
-            <span class="tag">Django</span>
-            <span class="tag">JavaScript</span>
-
-            <div class="section-title">Overview</div>
-            <p>
-                I built a music web application that allows users to explore, play, and manage
-                music content. The application is designed to provide a smooth and engaging
-                user experience.
-            </p>
-
-            <div class="section-title">My Approach</div>
-            <p>
-                I began by designing the backend using Django to handle user data, music
-                storage, and application logic. I structured the project using the MVC pattern
-                to keep the code organized and scalable.
-            </p>
-
-            <p>
-                On the frontend, I worked on creating an intuitive interface for browsing and
-                playing music. I integrated dynamic features using JavaScript to enhance user
-                interaction.
-            </p>
-
-            <div class="section-title">Key Learning</div>
-            <p>
-                Through this project, I gained experience in full-stack development, backend
-                architecture, and integrating frontend with server-side logic.
-            </p>
-        </div>
-
+        <div class="section-title">Key Learning</div>
+        <p>
+            Improved UI design thinking and front-end development practices.
+        </p>
     </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+        <div class="project-title">Music Web Application</div>
+
+        <span class="tag">Python</span>
+        <span class="tag">Django</span>
+        <span class="tag">JavaScript</span>
+
+        <div class="section-title">Overview</div>
+        <p>
+            A web application to explore and manage music with a focus on backend integration.
+        </p>
+
+        <div class="section-title">My Approach</div>
+        <p>
+            Built backend using Django and connected dynamic frontend for better user interaction.
+        </p>
+
+        <div class="section-title">Key Learning</div>
+        <p>
+            Learned full-stack integration and backend architecture design.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
