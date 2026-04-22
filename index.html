@@ -22,9 +22,11 @@
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 40px;
             background: #0f172a;
             color: #e5e7eb;
+            position: relative;
         }
 
         .logo {
@@ -51,6 +53,21 @@
             color: white;
         }
 
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
+            display: block;
+        }
+
         /* HERO */
         .hero {
             height: 90vh;
@@ -58,12 +75,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: #f9fafb;
         }
 
         .hero h2 {
             font-size: 42px;
-            font-weight: 600;
         }
 
         .hero span {
@@ -83,11 +98,6 @@
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 14px;
-        }
-
-        .btn:hover {
-            background: #1e40af;
         }
 
         /* SECTIONS */
@@ -103,16 +113,14 @@
         /* SKILLS */
         .skills-container {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
+            justify-content: center;
         }
 
         .skill {
             margin: 8px;
             padding: 8px 16px;
             background: #e5e7eb;
-            color: #374151;
             border-radius: 20px;
             font-size: 13px;
         }
@@ -120,16 +128,16 @@
         /* PROJECTS */
         .projects-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
         }
 
         .project-card {
             padding: 20px;
             border: 1px solid #e5e7eb;
-            width: 260px;
+            max-width: 300px;
+            width: 100%;
             border-radius: 10px;
             background: white;
             text-align: left;
@@ -141,77 +149,129 @@
             padding: 20px;
             background: #0f172a;
             color: #9ca3af;
-            font-size: 14px;
         }
 
+        /* ✅ MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 40px 15px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">MyPortfolio</h1>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <h1 class="logo">MyPortfolio</h1>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div>
-            <h2>Hello, I'm <span>Putti Venkata Sai Manikanta</span></h2>
-            <p>A passionate developer building modern web applications.</p>
-            <a href="projects.html" class="btn">View My Work</a>
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </section>
 
-    <!-- About Preview -->
-    <section class="section">
-        <h2>About Me</h2>
-        <p>
-            Motivated BCA student with strong foundations in programming and web development.
-            Skilled in Python, Java, and front-end technologies with a passion for problem solving.
-        </p>
-    </section>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Skills Preview -->
-    <section class="section dark">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill">C</div>
-            <div class="skill">Java</div>
-            <div class="skill">Python</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
+<!-- Hero -->
+<section class="hero">
+    <div>
+        <h2>Hello, I'm <span>Putti Venkata Sai Manikanta</span></h2>
+        <p>A passionate developer building modern web applications.</p>
+        <a href="projects.html" class="btn">View My Work</a>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section">
+    <h2>About Me</h2>
+    <p>
+        Motivated BCA student with strong foundations in programming and web development.
+        Skilled in Python, Java, and front-end technologies.
+    </p>
+</section>
+
+<!-- Skills -->
+<section class="section dark">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill">C</div>
+        <div class="skill">Java</div>
+        <div class="skill">Python</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>Clean and responsive personal portfolio.</p>
         </div>
-    </section>
-
-    <!-- Projects Preview -->
-    <section class="section">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A clean and responsive personal portfolio to showcase my skills and work.</p>
-            </div>
-            <div class="project-card">
-                <h3>Music Web Application</h3>
-                <p>A Django-based web app for managing and exploring music content.</p>
-            </div>
+        <div class="project-card">
+            <h3>Music Web Application</h3>
+            <p>Django-based web app for music content.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Putti Venkata Sai Manikanta</p>
-    </footer>
+<footer>
+    <p>© 2026 Putti Venkata Sai Manikanta</p>
+</footer>
+
+<script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
