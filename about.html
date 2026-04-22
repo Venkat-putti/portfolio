@@ -14,13 +14,15 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR (same as index) */
+        /* NAVBAR */
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 40px;
             background: #0f172a;
             color: #e5e7eb;
+            position: relative;
         }
 
         .logo {
@@ -47,6 +49,20 @@
             color: white;
         }
 
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
+        }
+
         /* CONTENT */
         .container {
             max-width: 900px;
@@ -56,7 +72,6 @@
 
         h1 {
             font-size: 36px;
-            margin-bottom: 10px;
         }
 
         h2 {
@@ -89,56 +104,107 @@
             margin-bottom: 8px;
             color: #374151;
         }
+
+        /* ✅ MOBILE */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">MyPortfolio</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="/skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <h1 class="logo">MyPortfolio</h1>
 
-    <!-- Content -->
-    <div class="container">
-
-        <h1>About Me</h1>
-
-        <p>
-            Hello, I'm <span class="highlight">Putti Venkata Sai Manikanta</span>, a motivated and
-            dedicated BCA student with a strong interest in software development and web technologies.
-        </p>
-
-        <p>
-            I have a solid foundation in C, Python, and Java along with front-end technologies
-            like HTML, CSS, and JavaScript. I enjoy solving problems and improving my skills in
-            Data Structures and Algorithms.
-        </p>
-
-        <p>
-            I am currently seeking an <span class="highlight">entry-level opportunity</span> where I can
-            contribute my skills and grow as a developer.
-        </p>
-
-        <div class="card">
-            <h2>Education</h2>
-            <ul>
-                <li>BCA – Aditya Degree College (CGPA: 8.8)</li>
-                <li>Bachelor of Computer Science – Distance Education (CGPA: 7.0)</li>
-                <li>Intermediate (MPC) – Sri Chaitanya Junior College (CGPA: 9.3)</li>
-                <li>SSC – ZPHS High School (CGPA: 9.5)</li>
-            </ul>
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1>About Me</h1>
+
+    <p>
+        Hello, I'm <span class="highlight">Putti Venkata Sai Manikanta</span>, a motivated and
+        dedicated BCA student with a strong interest in software development and web technologies.
+    </p>
+
+    <p>
+        I have a solid foundation in C, Python, and Java along with front-end technologies
+        like HTML, CSS, and JavaScript. I enjoy solving problems and improving my skills in
+        Data Structures and Algorithms.
+    </p>
+
+    <p>
+        I am currently seeking an <span class="highlight">entry-level opportunity</span> where I can
+        contribute my skills and grow as a developer.
+    </p>
+
+    <div class="card">
+        <h2>Education</h2>
+        <ul>
+            <li>BCA – Aditya Degree College (CGPA: 8.8)</li>
+            <li>Bachelor of Computer Science – Distance Education (CGPA: 7.0)</li>
+            <li>Intermediate (MPC) – Sri Chaitanya Junior College (CGPA: 9.3)</li>
+            <li>SSC – ZPHS High School (CGPA: 9.5)</li>
+        </ul>
     </div>
+
+</div>
+
+<script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
