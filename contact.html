@@ -17,9 +17,11 @@
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 40px;
             background: #0f172a;
             color: #e5e7eb;
+            position: relative;
         }
 
         .logo {
@@ -46,6 +48,21 @@
             color: white;
         }
 
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
+            display: block;
+        }
+
         /* CONTAINER */
         .container {
             max-width: 800px;
@@ -56,7 +73,6 @@
 
         h1 {
             font-size: 36px;
-            margin-bottom: 10px;
         }
 
         p.subtitle {
@@ -64,7 +80,6 @@
             margin-bottom: 40px;
         }
 
-        /* CONTACT INFO */
         .contact-info {
             background: white;
             padding: 25px;
@@ -80,10 +95,8 @@
 
         .highlight {
             color: #2563eb;
-            font-weight: 500;
         }
 
-        /* FORM */
         form {
             background: white;
             padding: 25px;
@@ -97,12 +110,6 @@
             margin-bottom: 15px;
             border: 1px solid #d1d5db;
             border-radius: 5px;
-            font-size: 14px;
-        }
-
-        textarea {
-            resize: none;
-            height: 120px;
         }
 
         button {
@@ -114,50 +121,84 @@
             cursor: pointer;
         }
 
-        button:hover {
-            background: #1e40af;
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">MyPortfolio</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <h1 class="logo">MyPortfolio</h1>
 
-    <!-- Content -->
-    <div class="container">
-        <h1>Contact Me</h1>
-        <p class="subtitle">
-            Feel free to reach out for opportunities, collaborations, or any queries.
-        </p>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-            <p><span class="highlight">Name:</span> Putti Venkata Sai Manikanta</p>
-            <p><span class="highlight">Email:</span> puttivenkat143@gmail.com</p>
-            <p><span class="highlight">Phone:</span> +91 9542982882</p>
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
-        <!-- Contact Form -->
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Contact Me</h1>
+    <p class="subtitle">Feel free to reach out for opportunities or queries.</p>
+
+    <div class="contact-info">
+        <p><span class="highlight">Name:</span> Putti Venkata Sai Manikanta</p>
+        <p><span class="highlight">Email:</span> puttivenkat143@gmail.com</p>
+        <p><span class="highlight">Phone:</span> +91 9542982882</p>
     </div>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>
