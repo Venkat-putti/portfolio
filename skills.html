@@ -17,9 +17,11 @@
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 40px;
             background: #0f172a;
             color: #e5e7eb;
+            position: relative;
         }
 
         .logo {
@@ -46,6 +48,20 @@
             color: white;
         }
 
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
+        }
+
         /* CONTAINER */
         .container {
             max-width: 1000px;
@@ -55,7 +71,6 @@
 
         h1 {
             font-size: 36px;
-            margin-bottom: 10px;
         }
 
         p.subtitle {
@@ -63,7 +78,7 @@
             margin-bottom: 40px;
         }
 
-        /* SKILL CARDS */
+        /* SKILLS GRID */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,7 +97,6 @@
             font-size: 20px;
         }
 
-        /* SKILL ITEM */
         .skill {
             margin-bottom: 15px;
         }
@@ -106,143 +120,164 @@
             background: #2563eb;
         }
 
+        /* ✅ MOBILE */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">MyPortfolio</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <h1 class="logo">MyPortfolio</h1>
 
-    <!-- Content -->
-    <div class="container">
-        <h1>My Skills</h1>
-        <p class="subtitle">
-            A combination of technical expertise and problem-solving ability built through continuous learning and practice.
-        </p>
-
-        <div class="skills-grid">
-
-            <!-- Programming -->
-            <div class="card">
-                <h2>Programming</h2>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>C</span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 70%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Java</span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 65%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 75%"></div></div>
-                </div>
-            </div>
-
-            <!-- Web Development -->
-            <div class="card">
-                <h2>Web Development</h2>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>HTML</span>
-                        <span>Strong</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 85%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>CSS</span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 70%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>JavaScript</span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 65%"></div></div>
-                </div>
-            </div>
-
-            <!-- Concepts -->
-            <div class="card">
-                <h2>Concepts</h2>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Data Structures & Algorithms</span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 70%"></div></div>
-                </div>
-            </div>
-
-            <!-- Tools & Soft Skills -->
-            <div class="card">
-                <h2>Tools & Soft Skills</h2>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>MS Office</span>
-                        <span>Good</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 75%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Communication</span>
-                        <span>Strong</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 80%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Problem Solving</span>
-                        <span>Strong</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 85%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Time Management</span>
-                        <span>Good</span>
-                    </div>
-                    <div class="bar"><div class="progress" style="width: 75%"></div></div>
-                </div>
-            </div>
-
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>My Skills</h1>
+    <p class="subtitle">
+        A combination of technical expertise and problem-solving ability built through continuous learning.
+    </p>
+
+    <div class="skills-grid">
+
+        <!-- Programming -->
+        <div class="card">
+            <h2>Programming</h2>
+
+            <div class="skill">
+                <div class="skill-name"><span>C</span><span>Intermediate</span></div>
+                <div class="bar"><div class="progress" style="width: 70%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>Java</span><span>Intermediate</span></div>
+                <div class="bar"><div class="progress" style="width: 65%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>Python</span><span>Intermediate</span></div>
+                <div class="bar"><div class="progress" style="width: 75%"></div></div>
+            </div>
+        </div>
+
+        <!-- Web -->
+        <div class="card">
+            <h2>Web Development</h2>
+
+            <div class="skill">
+                <div class="skill-name"><span>HTML</span><span>Strong</span></div>
+                <div class="bar"><div class="progress" style="width: 85%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>CSS</span><span>Intermediate</span></div>
+                <div class="bar"><div class="progress" style="width: 70%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>JavaScript</span><span>Intermediate</span></div>
+                <div class="bar"><div class="progress" style="width: 65%"></div></div>
+            </div>
+        </div>
+
+        <!-- Concepts -->
+        <div class="card">
+            <h2>Concepts</h2>
+
+            <div class="skill">
+                <div class="skill-name"><span>DSA</span><span>Intermediate</span></div>
+                <div class="bar"><div class="progress" style="width: 70%"></div></div>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="card">
+            <h2>Tools & Soft Skills</h2>
+
+            <div class="skill">
+                <div class="skill-name"><span>MS Office</span><span>Good</span></div>
+                <div class="bar"><div class="progress" style="width: 75%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>Communication</span><span>Strong</span></div>
+                <div class="bar"><div class="progress" style="width: 80%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>Problem Solving</span><span>Strong</span></div>
+                <div class="bar"><div class="progress" style="width: 85%"></div></div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name"><span>Time Management</span><span>Good</span></div>
+                <div class="bar"><div class="progress" style="width: 75%"></div></div>
+            </div>
+        </div>
+
     </div>
+</div>
+
+<script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
