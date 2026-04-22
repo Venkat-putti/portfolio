@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f9fafb;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR (same as index) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: #cbd5f5;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #1f2937;
+        }
+
+        p {
+            color: #4b5563;
+        }
+
+        .highlight {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #e5e7eb;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">MyPortfolio</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="/skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+
+        <h1>About Me</h1>
+
+        <p>
+            Hello, I'm <span class="highlight">Putti Venkata Sai Manikanta</span>, a motivated and
+            dedicated BCA student with a strong interest in software development and web technologies.
+        </p>
+
+        <p>
+            I have a solid foundation in C, Python, and Java along with front-end technologies
+            like HTML, CSS, and JavaScript. I enjoy solving problems and improving my skills in
+            Data Structures and Algorithms.
+        </p>
+
+        <p>
+            I am currently seeking an <span class="highlight">entry-level opportunity</span> where I can
+            contribute my skills and grow as a developer.
+        </p>
+
+        <div class="card">
+            <h2>Education</h2>
+            <ul>
+                <li>BCA – Aditya Degree College (CGPA: 8.8)</li>
+                <li>Bachelor of Computer Science – Distance Education (CGPA: 7.0)</li>
+                <li>Intermediate (MPC) – Sri Chaitanya Junior College (CGPA: 9.3)</li>
+                <li>SSC – ZPHS High School (CGPA: 9.5)</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

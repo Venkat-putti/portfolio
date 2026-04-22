@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f9fafb;
+            color: #111827;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: #cbd5f5;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a.active {
+            color: white;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        /* PROJECT CARD */
+        .project-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .project-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e5e7eb;
+            color: #374151;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-top: 5px;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #4b5563;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">MyPortfolio</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>Projects</h1>
+        <p class="subtitle">
+            A selection of projects that showcase my development skills and learning journey.
+        </p>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-title">Personal Portfolio Website</div>
+
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+
+            <div class="section-title">Overview</div>
+            <p>
+                I developed a personal portfolio website to present my skills, projects, and
+                background in a structured and professional way. The goal was to create a clean,
+                responsive, and user-friendly interface.
+            </p>
+
+            <div class="section-title">My Approach</div>
+            <p>
+                I started by planning the layout and identifying key sections such as Home,
+                About, Skills, and Projects. I focused on maintaining consistency across pages
+                by designing a reusable navigation bar and a minimal UI.
+            </p>
+
+            <p>
+                During development, I ensured responsive design using flexible layouts and
+                tested the website across different screen sizes. I also refined the color
+                scheme to maintain a professional appearance.
+            </p>
+
+            <div class="section-title">Key Learning</div>
+            <p>
+                This project helped me improve my front-end development skills, UI design
+                thinking, and the importance of clean and maintainable code structure.
+            </p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-title">Music Web Application</div>
+
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">JavaScript</span>
+
+            <div class="section-title">Overview</div>
+            <p>
+                I built a music web application that allows users to explore, play, and manage
+                music content. The application is designed to provide a smooth and engaging
+                user experience.
+            </p>
+
+            <div class="section-title">My Approach</div>
+            <p>
+                I began by designing the backend using Django to handle user data, music
+                storage, and application logic. I structured the project using the MVC pattern
+                to keep the code organized and scalable.
+            </p>
+
+            <p>
+                On the frontend, I worked on creating an intuitive interface for browsing and
+                playing music. I integrated dynamic features using JavaScript to enhance user
+                interaction.
+            </p>
+
+            <div class="section-title">Key Learning</div>
+            <p>
+                Through this project, I gained experience in full-stack development, backend
+                architecture, and integrating frontend with server-side logic.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

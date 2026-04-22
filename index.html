@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f9fafb;
+            color: #111827;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: #cbd5f5;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #f9fafb;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            font-weight: 600;
+        }
+
+        .hero span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: #6b7280;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 22px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #1e40af;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .dark {
+            background: #f3f4f6;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill {
+            margin: 8px;
+            padding: 8px 16px;
+            background: #e5e7eb;
+            color: #374151;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* PROJECTS */
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            width: 260px;
+            border-radius: 10px;
+            background: white;
+            text-align: left;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0f172a;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">MyPortfolio</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div>
+            <h2>Hello, I'm <span>Putti Venkata Sai Manikanta</span></h2>
+            <p>A passionate developer building modern web applications.</p>
+            <a href="projects.html" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section">
+        <h2>About Me</h2>
+        <p>
+            Motivated BCA student with strong foundations in programming and web development.
+            Skilled in Python, Java, and front-end technologies with a passion for problem solving.
+        </p>
+    </section>
+
+    <!-- Skills Preview -->
+    <section class="section dark">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">C</div>
+            <div class="skill">Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+        </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A clean and responsive personal portfolio to showcase my skills and work.</p>
+            </div>
+            <div class="project-card">
+                <h3>Music Web Application</h3>
+                <p>A Django-based web app for managing and exploring music content.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Putti Venkata Sai Manikanta</p>
+    </footer>
+
+</body>
+</html>
