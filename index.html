@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -46,14 +49,8 @@
         .nav-links a {
             color: #cbd5f5;
             text-decoration: none;
-            font-size: 14px;
         }
 
-        .nav-links a:hover {
-            color: white;
-        }
-
-        /* HAMBURGER */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -65,7 +62,6 @@
             width: 25px;
             background: white;
             margin: 4px 0;
-            display: block;
         }
 
         /* HERO */
@@ -85,22 +81,17 @@
             color: #2563eb;
         }
 
-        .hero p {
-            margin-top: 10px;
-            color: #6b7280;
-        }
-
         .btn {
-            display: inline-block;
             margin-top: 20px;
+            display: inline-block;
             padding: 10px 22px;
             background: #2563eb;
             color: white;
-            text-decoration: none;
             border-radius: 6px;
+            text-decoration: none;
         }
 
-        /* SECTIONS */
+        /* SECTION */
         .section {
             padding: 70px 20px;
             text-align: center;
@@ -110,26 +101,89 @@
             background: #f3f4f6;
         }
 
-        /* SKILLS */
-        .skills-container {
+        /* SKILLS SLIDER */
+        .skills-slider {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
         }
 
-        .skill {
-            margin: 8px;
-            padding: 8px 16px;
-            background: #e5e7eb;
-            border-radius: 20px;
-            font-size: 13px;
+        .skills-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* 🌈 GRADIENT ANIMATED SKILL CARDS */
+        .skill-card {
+            min-width: 120px;
+            height: 120px;
+            margin: 10px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            font-weight: 600;
+            position: relative;
+
+            background: linear-gradient(270deg, #2563eb, #9333ea, #06b6d4, #2563eb);
+            background-size: 600% 600%;
+            animation: gradientMove 6s ease infinite;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        /* Glow */
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: inherit;
+            filter: blur(15px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .skill-card i {
+            font-size: 28px;
+        }
+
+        .skill-card span {
+            font-size: 12px;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .prev, .next {
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
         }
 
         /* PROJECTS */
         .projects-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
@@ -137,17 +191,180 @@
             padding: 20px;
             border: 1px solid #e5e7eb;
             max-width: 300px;
-            width: 100%;
             border-radius: 10px;
             background: white;
-            text-align: left;
         }
 
         /* FOOTER */
         footer {
-            text-align: center;
             padding: 20px;
+            text-align: center;
             background: #0f172a;
+            color: #9ca3af;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: #0f172a;
+                width: 100%;
+                top: 70px;
+                left: 0;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h1 class="logo">MyPortfolio</h1>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h2>Hello, I'm <span>Putti Venkata Sai Manikanta</span></h2>
+        <p>A passionate developer building modern web apps.</p>
+        <a href="#" class="btn">View My Work</a>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section dark">
+    <h2>Skills</h2>
+
+    <div class="skills-slider">
+        <button class="prev">&#10094;</button>
+
+        <div class="skills-track" id="skills-track">
+
+            <div class="skill-card">
+                <i class="fa-solid fa-c"></i>
+                <span>C</span>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-java"></i>
+                <span>Java</span>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML</span>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
+
+        <button class="next">&#10095;</button>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>Responsive personal portfolio.</p>
+        </div>
+        <div class="project-card">
+            <h3>Music App</h3>
+            <p>Django-based music platform.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Putti Venkata Sai Manikanta</p>
+</footer>
+
+<script>
+    // NAVBAR
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+
+    // SKILLS SLIDER
+    const track = document.getElementById("skills-track");
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+
+    let index = 0;
+    const visible = 3;
+
+    function updateSlider() {
+        const width = track.children[0].offsetWidth + 20;
+        track.style.transform = `translateX(-${index * width}px)`;
+    }
+
+    next.onclick = () => {
+        if (index < track.children.length - visible) index++;
+        else index = 0;
+        updateSlider();
+    };
+
+    prev.onclick = () => {
+        if (index > 0) index--;
+        else index = track.children.length - visible;
+        updateSlider();
+    };
+</script>
+
+</body>
+</html>            background: #0f172a;
             color: #9ca3af;
         }
 
